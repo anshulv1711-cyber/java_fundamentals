@@ -1,4 +1,4 @@
-public class Employee extends Person {
+public class Employee extends Person implements Payable, Workable {
     private String empId;
     private double salary;
 
@@ -10,10 +10,6 @@ public class Employee extends Person {
 
     public String getEmpId() {
         return empId;
-    }
-
-    public double getSalary() {
-        return salary;
     }
 
     public void setSalary(double salary) {
@@ -37,12 +33,30 @@ public class Employee extends Person {
             }
 
             @Override
-        public void displayInfo(){
+    public String getWorkType(){
+        return "Office Work";
+            }
+    @Override
+    public double getSalary() {
+        return salary;
+    }
+    @Override
+    public void calculateSalary() {
+        System.out.println("Salary calculated for " + getName() + ": $" + salary);
+    }
+
+            @Override
+    public double calculateTaxRate(){
+        return salary * TAX_RATE;
+            }
+    @Override
+    public void displayInfo(){
         super.displayInfo();
         System.out.println("Employee ID: " + empId);
-                System.out.println("Salary for Employee "+getName()+" is " + salary);
-            }
-        }
+        System.out.println("Salary: $" + salary);
+        System.out.println("Tax (15%): $" + calculateTaxRate());
+    }
+}
 
 
 

@@ -1,6 +1,6 @@
 public class Exercise17{
 
-    public  static void main(String[] args){
+        public  static void main(String[] args){
 
         Employee employee = new Employee("Rahul", 65, "Bangalore", "Emp001", 65587.08);
 
@@ -36,5 +36,5 @@ public class Exercise17{
         employee.work();
 
     }
-    }
+}
 

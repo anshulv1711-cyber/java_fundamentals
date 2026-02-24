@@ -1,4 +1,4 @@
-public class Student extends Person {
+public class Student extends Person implements Workable {
     private String studentID;
     private final String subject;
     private final double score;
@@ -39,9 +39,16 @@ public class Student extends Person {
         System.out.println(getName() + " is studying in subject " + subject + "(Student ID: " + studentID + ")");
     }
 
-    public void study() {
-        System.out.println(getName() + " is dtudying hard for " + subject + " exam.");
+    @Override
+    public String getWorkType(){
+        return "Studies";
     }
+
+    public void study() {
+        System.out.println(getName() + " is studying hard for " + subject + " exam.");
+    }
+
+
 
     @Override
     public void displayInfo() {
