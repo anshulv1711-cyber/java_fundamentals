@@ -25,13 +25,13 @@ public class Employee extends Person {
 
     }
     public void setEmpId(String empId) {
-        if(empId != null && !empId.isEmpty()) {
-            this.empId = empId;
+            if(empId != null && !empId.isEmpty()) {
+                this.empId = empId;
+            }
+            else
+            System.out.println("Invalid Employee ID");
         }
-        else
-        System.out.println("Invalid Employee ID");
-    }
-
+        @Override
         public void work(){
                 System.out.println(getName()+" is working as employee "+ empId);
             }
